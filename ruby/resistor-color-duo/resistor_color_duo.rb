@@ -1,21 +1,21 @@
 class ResistorColorDuo
     BANDS = {
-      "black" => 0,
-      "brown" => 1,
-      "red" => 2,
-      "orange" => 3,
-      "yellow" => 4,
-      "green" => 5,
-      "blue" => 6,
-      "violet" => 7,
-      "grey" => 8,
-      "white" => 9
-    }.freeze
+      "black"   => 0,
+      "brown"   => 1,
+      "red"     => 2,
+      "orange"  => 3,
+      "yellow"  => 4,
+      "green"   => 5,
+      "blue"    => 6,
+      "violet"  => 7,
+      "grey"    => 8,
+      "white"   => 9
+    }
 
-  def self.value(two_colors)
+  def self.value(colors)
 
-    "#{BANDS[two_colors[0]]}#{BANDS[two_colors[1]]}".to_i
+    ones = colors.take(2)
+    ones.map {|color| BANDS[color]}.join("").to_i
 
   end
-
 end
