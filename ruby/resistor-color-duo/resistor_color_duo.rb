@@ -1,5 +1,5 @@
 class ResistorColorDuo
-    BANDS = {
+    BAND = {
       "black"   => 0,
       "brown"   => 1,
       "red"     => 2,
@@ -14,8 +14,11 @@ class ResistorColorDuo
 
   def self.value(colors)
 
-    ones = colors.take(2)
-    ones.map {|color| BANDS[color]}.join("").to_i
+    colors = colors.take(2)
+    color_band = colors.each_with_object([]){|color, str| str << BAND[color]}.join("")
+    Integer(color_band)
+
+
 
   end
 end
