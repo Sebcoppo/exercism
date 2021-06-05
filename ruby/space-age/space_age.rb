@@ -23,9 +23,9 @@ class SpaceAge
     @seconds = seconds
   end
 
-  ORBITAL_PERIOD.each {|planet, planet_orbital_period|
-      define_method("on_#{planet}") do
-        @seconds / (EARTH_YEAR * planet_orbital_period).to_f
+  ORBITAL_PERIOD.each { |planet, planet_orbital_period|
+    define_method("on_#{planet}") do
+      @seconds / (EARTH_YEAR * planet_orbital_period).to_f
     end
   }
 end
